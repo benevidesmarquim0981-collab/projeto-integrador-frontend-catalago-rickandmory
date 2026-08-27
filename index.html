@@ -14,42 +14,157 @@
   </header>
 
   <main>
-    <section id="lista-personagens">
+
+    <section id="lista-personagens" aria-labelledby="titulo-personagens">
+      <h2 id="titulo-personagens">Personagens</h2>
+
       <article class="personagem">
-        <h2>Rick Sanchez</h2>
+        <h3>Rick Sanchez</h3>
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra C-137</p>
       </article>
 
       <article class="personagem">
-        <h2>Morty Smith</h2>
+        <h3>Morty Smith</h3>
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra C-137</p>
       </article>
 
       <article class="personagem">
-        <h2>Summer Smith</h2>
+        <h3>Summer Smith</h3>
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
       </article>
 
       <article class="personagem">
-        <h2>Beth Smith</h2>
+        <h3>Beth Smith</h3>
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
       </article>
 
       <article class="personagem">
-        <h2>Jerry Smith</h2>
+        <h3>Jerry Smith</h3>
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
       </article>
 
       <article class="personagem">
-        <h2>Birdperson</h2>
+        <h3>Birdperson</h3>
         <p><strong>Espécie:</strong> Alienígena</p>
+        <p><strong>Status:</strong> Morto</p>
+        <p><strong>Origem:</strong> Desconhecida</p>
+      </article>
+
+      <article class="personagem">
+        <h3>Mr. Poopybutthole</h3>
+        <p><strong>Espécie:</strong> Alienígena</p>
+        <p><strong>Status:</strong> Vivo</p>
+        <p><strong>Origem:</strong> Desconhecida</p>
+      </article>
+    </section>
+
+    <section id="avaliacao" aria-labelledby="titulo-avaliacao">
+      <h2 id="titulo-avaliacao">Avalie seu Personagem Favorito</h2>
+
+      <div class="alerta" role="status">
+        <p>Sua avaliação ajuda a melhorar o catálogo!</p>
+        <button type="button" class="btn-fechar-alerta" aria-label="Fechar aviso">
+          ✕
+        </button>
+      </div>
+
+      <form id="form-avaliacao" novalidate>
+
+        <fieldset>
+          <legend>Seus Dados</legend>
+
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              minlength="2"
+            >
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+            >
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sua Avaliação</legend>
+
+          <div class="campo">
+            <label for="personagem-favorito">Personagem favorito</label>
+            <select id="personagem-favorito" name="personagem-favorito" required>
+              <option value="">Selecione...</option>
+              <option value="rick">Rick Sanchez</option>
+              <option value="morty">Morty Smith</option>
+              <option value="summer">Summer Smith</option>
+              <option value="birdperson">Birdperson</option>
+              <option value="poopybutthole">Mr. Poopybutthole</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="nota">Nota (1 a 5)</label>
+            <input
+              type="number"
+              id="nota"
+              name="nota"
+              min="1"
+              max="5"
+              required
+            >
+          </div>
+
+          <div class="campo">
+            <span class="label-grupo">Recomendaria a série?</span>
+            <div class="radio-grupo">
+              <label for="recomenda-sim">
+                <input type="radio" id="recomenda-sim" name="recomenda" value="sim">
+                Sim
+              </label>
+              <label for="recomenda-nao">
+                <input type="radio" id="recomenda-nao" name="recomenda" value="nao">
+                Não
+              </label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="comentario">Comentário</label>
+            <textarea
+              id="comentario"
+              name="comentario"
+              rows="4"
+            ></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit">Enviar Avaliação</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Projeto Integrador — Desenvolvimento Front-end para Web</p>
+  </footer>
+
+</body>
+</html>
