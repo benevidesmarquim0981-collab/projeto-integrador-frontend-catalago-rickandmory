@@ -72,3 +72,91 @@ footer {
   color: #8b949e;
   border-top: 1px solid #30363d;
 }
+/* --- Formulário de Avaliação --- */
+
+.alerta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  border: 1px solid #44b34a;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.btn-fechar-alerta {
+  background: transparent;
+  border: none;
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+legend {
+  padding: 0 8px;
+  color: #44b34a;
+  font-weight: bold;
+}
+
+.campo {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label,
+.label-grupo {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #f0f0f0;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #44b34a;
+}
+
+.radio-grupo {
+  display: flex;
+  gap: 16px;
+}
+
+.radio-grupo label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+button[type="submit"] {
+  background-color: #44b34a;
+  color: #0d1117;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #368a3b;
+}
