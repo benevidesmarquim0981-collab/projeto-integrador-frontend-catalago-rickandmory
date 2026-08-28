@@ -64,3 +64,17 @@ Autor
 Desenvolvido por Matheus Benevides para fins de estudo e prática de desenvolvimento front-end.
 
 Projeto acadêmico inspirado em Rick and Morty, criado sem finalidade comercial.
+
+
+
+
+# Avaliador Ruan Henrique 27/08
+
+1 — Git/GitHub | Repositório, `.gitignore`, commits | Atendido |
+2 — Conceitos Web | Lista, tabela, link externo, imagem | Atendido |
+3 — Semântica/Formulário | Header/main/footer, sections, formulário acessível | Atendido |
+4 — Multimídia | Vídeo com fallback, poster e preload justificado | Atendido |
+
+O projeto cumpre os requisitos técnicos das quatro aulas, com estrutura HTML5 
+semântica, formulário validado e acessível, e seção de vídeo corretamente 
+implementada com múltiplos formatos de fallback.
