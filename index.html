@@ -3,105 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Personagens — Rick and Morty</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Catálogo de Personagens - Rick and Morty</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- Cabeçalho da página -->
   <header>
-    <h1>Catálogo de Personagens</h1>
-    <p>Rick and Morty</p>
-  </header>
+  <h1>Catálogo de Personagens</h1>
+  <p>Um catálogo interativo com informações e avaliações dos personagens do universo Rick and Morty.</p>
+</header>
 
   <main>
 
-    <section id="lista-personagens" aria-labelledby="titulo-personagens">
-      <h2 id="titulo-personagens">Personagens</h2>
+    <!-- Lista de personagens -->
+    <section id="lista-personagens">
+      <h2>Personagens</h2>
 
-      <article class="personagem">
+      <!-- Lista rápida do tema (Aula 2) -->
+      <ul>
+        <li>Personagens humanos e alienígenas de múltiplas dimensões</li>
+        <li>Origem principal: Terra C-137</li>
+        <li>Status atualizado: vivo ou morto</li>
+      </ul>
+
+      <div class="personagem">
         <h3>Rick Sanchez</h3>
+        <img src="assets/images/rick-sanchez.jpg" alt="Rick Sanchez, cientista idoso de jaleco azul, segurando um portal gun">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra C-137</p>
-      </article>
+      </div>
 
-      <article class="personagem">
+      <div class="personagem">
         <h3>Morty Smith</h3>
+        <img src="assets/images/morty-smith.jpg" alt="Morty Smith, adolescente de cabelo castanho e camiseta amarela">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra C-137</p>
-      </article>
+      </div>
 
-      <article class="personagem">
+      <div class="personagem">
         <h3>Summer Smith</h3>
+        <img src="assets/images/summer-smith.jpg" alt="Summer Smith, adolescente de cabelo ruivo">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
-      </article>
+      </div>
 
-      <article class="personagem">
+      <div class="personagem">
         <h3>Beth Smith</h3>
+        <img src="assets/images/beth-smith.jpg" alt="Beth Smith, mãe da família, cabelo ruivo comprido">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
-      </article>
+      </div>
 
-      <article class="personagem">
+      <div class="personagem">
         <h3>Jerry Smith</h3>
+        <img src="assets/images/jerry-smith.jpg" alt="Jerry Smith, pai da família, camisa social azul">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
-      </article>
+      </div>
 
-      <article class="personagem">
+      <div class="personagem">
         <h3>Birdperson</h3>
+        <img src="assets/images/birdperson.jpg" alt="Birdperson, alienígena humanoide com corpo de ave e óculos escuros">
         <p><strong>Espécie:</strong> Alienígena</p>
         <p><strong>Status:</strong> Morto</p>
         <p><strong>Origem:</strong> Desconhecida</p>
-      </article>
+      </div>
 
-      <article class="personagem">
+      <div class="personagem">
         <h3>Mr. Poopybutthole</h3>
+        <img src="assets/images/mr-poopybutthole.jpg" alt="Mr. Poopybutthole, alienígena marrom em formato de mancha com braços e pernas curtos">
         <p><strong>Espécie:</strong> Alienígena</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Desconhecida</p>
-      </article>
-    </section>
-
-    <section id="avaliacao" aria-labelledby="titulo-avaliacao">
-      <h2 id="titulo-avaliacao">Avalie seu Personagem Favorito</h2>
-
-      <div class="alerta" role="status">
-        <p>Sua avaliação ajuda a melhorar o catálogo!</p>
-        <button type="button" class="btn-fechar-alerta" aria-label="Fechar aviso">
-          ✕
-        </button>
       </div>
 
-      <form id="form-avaliacao" novalidate>
+      <!-- Tabela resumo (Aula 2) -->
+      <h3>Resumo por status</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vivo</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Morto</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Link externo (Aula 2) -->
+      <p>
+        <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">
+          Fonte: Rick and Morty API
+        </a>
+      </p>
+    </section>
+
+    <!-- Seção de mídia (Aula 4) -->
+    <section id="video-apresentacao">
+      <h2>Conheça o Catálogo</h2>
+
+      <!--
+        preload="metadata" escolhido porque o vídeo fica no meio da página
+        (abaixo da dobra) e não é o foco principal do conteúdo: carregamos
+        só duração/dimensões para exibir o poster rapidamente, sem baixar
+        o arquivo inteiro antes do usuário decidir assistir.
+      -->
+      <video controls poster="assets/images/poster-video.jpg" preload="metadata" width="560" height="315">
+        <source src="assets/videos/tour-personagens.webm" type="video/webm">
+        <source src="assets/videos/tour-personagens.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeo HTML5.
+      </video>
+    </section>
+
+    <!-- Formulário de avaliação -->
+    <section id="avaliacao">
+      <h2>Avalie seu Personagem Favorito</h2>
+
+      <div class="alerta">
+        <p>Sua avaliação ajuda a melhorar o catálogo!</p>
+        <button type="button" id="btn-fechar-alerta" aria-label="Fechar alerta">X</button>
+      </div>
+
+      <form id="form-avaliacao">
 
         <fieldset>
           <legend>Seus Dados</legend>
 
           <div class="campo">
             <label for="nome">Nome</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              required
-              minlength="2"
-            >
+            <input type="text" id="nome" name="nome" required>
           </div>
 
           <div class="campo">
             <label for="email">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-            >
+            <input type="email" id="email" name="email" required>
           </div>
         </fieldset>
 
@@ -122,37 +171,21 @@
 
           <div class="campo">
             <label for="nota">Nota (1 a 5)</label>
-            <input
-              type="number"
-              id="nota"
-              name="nota"
-              min="1"
-              max="5"
-              required
-            >
+            <input type="number" id="nota" name="nota" min="1" max="5" required>
           </div>
 
           <div class="campo">
-            <span class="label-grupo">Recomendaria a série?</span>
-            <div class="radio-grupo">
-              <label for="recomenda-sim">
-                <input type="radio" id="recomenda-sim" name="recomenda" value="sim">
-                Sim
-              </label>
-              <label for="recomenda-nao">
-                <input type="radio" id="recomenda-nao" name="recomenda" value="nao">
-                Não
-              </label>
-            </div>
+            <p>Recomendaria a série?</p>
+            <input type="radio" id="recomenda-sim" name="recomenda" value="sim">
+            <label for="recomenda-sim">Sim</label>
+
+            <input type="radio" id="recomenda-nao" name="recomenda" value="nao">
+            <label for="recomenda-nao">Não</label>
           </div>
 
           <div class="campo">
             <label for="comentario">Comentário</label>
-            <textarea
-              id="comentario"
-              name="comentario"
-              rows="4"
-            ></textarea>
+            <textarea id="comentario" name="comentario" rows="4"></textarea>
           </div>
         </fieldset>
 
@@ -162,17 +195,10 @@
 
   </main>
 
+  <!-- Rodapé da página -->
   <footer>
-    <p>Projeto Integrador — Desenvolvimento Front-end para Web</p>
+    <p>Projeto Integrador - Desenvolvimento Front-end para Web</p>
   </footer>
 
 </body>
 </html>
-<iframe 
-  width="560" 
-  height="315" 
-  src="WhatsApp Video 2026-08-27 at 09.28.33 (1).mp4" 
-  title="Vídeo do tiktok" 
-  frameborder="0" 
-  allowfullscreen>
-</iframe>
