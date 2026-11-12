@@ -1,69 +1,108 @@
 # Rick and Morty — Catálogo de Personagens
-Projeto de front-end desenvolvido com HTML5 e CSS3 que apresenta um catálogo inspirado na série Rick and Morty. A página reúne personagens da animação em cards com imagens e informações, além de conteúdo em vídeo.
+# Rick and Morty — Catálogo de Personagens
 
-Estrutura do projeto
+Projeto de front-end desenvolvido como atividade acadêmica, utilizando HTML5, CSS3 e JavaScript. O catálogo é inspirado na série *Rick and Morty* e apresenta personagens da animação em cards com imagens e informações, além de conteúdo em vídeo.
 
+O projeto foi desenvolvido com o objetivo de praticar os conceitos de desenvolvimento web, incluindo estruturação semântica, estilização, organização de layouts, responsividade e interatividade com JavaScript.
+
+## Estrutura do projeto
+
+```text
 projeto-integrador-frontend-catalogo-rickandmory/
-├── index.html       → Estrutura e conteúdo da página
-├── style.css        → Estilização e responsividade
-├── README.md        → Documentação do projeto
-└── video.mp4        → Vídeo utilizado na página
+│
+├── assets/
+│   ├── images/          → Imagens utilizadas no projeto
+│   └── videos/          → Vídeos utilizados na página
+│
+├── css/
+│   └── style.css        → Estilização principal
+│
+├── index.html           → Estrutura e conteúdo da página
+├── main.js              → Funcionalidades e interações com JavaScript
+├── style.css            → Arquivo de estilos adicional
+└── README.md            → Documentação do projeto
+```
 
-Funcionalidades
+## Funcionalidades
 
-Cabeçalho com o título do catálogo;
+- Cabeçalho com título e menu de navegação;
+- Menu com opções de navegação e submenu;
+- Menu responsivo para dispositivos menores;
+- Apresentação dos personagens em cards com imagens e informações;
+- Pesquisa de personagens pelo nome;
+- Filtro de personagens por espécie;
+- Contagem dos personagens encontrados;
+- Adição de um novo personagem ao catálogo;
+- Sistema de favoritos, permitindo marcar e desmarcar personagens;
+- Resumo do catálogo com quantidade total de personagens, espécies e status;
+- Reprodução de vídeo de apresentação;
+- Formulário para avaliação do catálogo;
+- Demonstrações práticas de conceitos de JavaScript, como Event Loop, `innerHTML` e `textContent`.
 
-Exibição dos personagens em cards;
+## Desenvolvimento e conteúdos aplicados
 
-Imagens e informações dos personagens;
+### HTML5
 
-Layout organizado e responsivo;
+- Estruturação semântica da página;
+- Utilização de elementos como `header`, `nav`, `main`, `section`, `article` e `footer`;
+- Organização de formulários, imagens e vídeos;
+- Utilização de atributos para identificação e acessibilidade dos elementos.
 
-Efeitos visuais aplicados com CSS;
+### CSS3
 
-Reprodução de conteúdo em vídeo;
+- Definição de variáveis de cores e estilos;
+- Reset básico e aplicação do modelo de caixa (`box-sizing`);
+- Utilização de seletores, pseudo-classes e efeitos visuais;
+- Organização dos elementos com Flexbox;
+- Criação de layouts com CSS Grid;
+- Menu de navegação com posicionamento sticky;
+- Responsividade por meio de media queries;
+- Estilização de cards, tabelas, formulários e botões.
 
-Estrutura HTML semântica.
+### JavaScript
 
-Como usar
+- Declaração de variáveis, funções e estruturas condicionais;
+- Utilização de arrays e métodos como `map`, `filter`, `find` e `reduce`;
+- Manipulação do DOM para criar e atualizar elementos da página;
+- Utilização de eventos para interações com botões, campos de pesquisa e filtros;
+- Implementação de favoritos e adição dinâmica de personagens;
+- Utilização de `template` e `DocumentFragment` para criação de novos cards;
+- Uso de `dataset` para acessar informações dos personagens;
+- Demonstração da ordem de execução do Event Loop, envolvendo código síncrono, Promises e `setTimeout`;
+- Comparação entre `innerHTML` e `textContent`.
+
+## Como usar
 
 Baixe os arquivos ou clone este repositório:
 
+```bash
 git clone https://github.com/benevidesmarquim0981-collab/projeto-integrador-frontend-catalogo-rickandmory.git
+```
 
-Abra a pasta do projeto.
+Entre na pasta do projeto e abra o arquivo `index.html` em um navegador, como Google Chrome, Microsoft Edge ou Mozilla Firefox.
 
-Abra o arquivo index.html em um navegador, como Chrome, Edge ou Firefox.
+A página pode ser executada localmente, sem necessidade de instalação de dependências.
 
-A página será executada localmente, sem necessidade de instalação.
+## Tecnologias utilizadas
 
-Tecnologias utilizadas
+- **HTML5** — estrutura e organização semântica da página;
+- **CSS3** — estilização, Flexbox, Grid e responsividade;
+- **JavaScript** — funcionalidades, manipulação do DOM e interatividade;
+- **Git** — controle de versão;
+- **GitHub** — armazenamento e compartilhamento do projeto.
 
-HTML5 — estrutura semântica da página;
+## Possíveis melhorias futuras
 
-CSS3 — cores, layout, animações e responsividade;
+- Integração com a API de Rick and Morty para carregar personagens automaticamente;
+- Ampliação dos filtros, incluindo gênero e status;
+- Criação de uma página individual com mais detalhes de cada personagem;
+- Melhorias na organização e apresentação das informações do catálogo.
 
-Git e GitHub — versionamento e armazenamento do projeto.
+## Autor
 
-Possíveis melhorias futuras
+Desenvolvido por Matheus Benevides para fins acadêmicos, como prática de desenvolvimento front-end.
 
-Consumir a API oficial de Rick and Morty;
-
-Adicionar uma barra de pesquisa por personagem;
-
-Criar filtros por espécie, gênero e status;
-
-Exibir uma página com detalhes de cada personagem;
-
-Adicionar JavaScript para tornar o catálogo interativo;
-
-Publicar o projeto no GitHub Pages.
-
-Autor
-
-Desenvolvido por Matheus Benevides para fins de estudo e prática de desenvolvimento front-end.
-
-Projeto acadêmico inspirado em Rick and Morty, criado sem finalidade comercial.
+Projeto inspirado na série *Rick and Morty*, criado sem finalidade comercial.
 
 
 
