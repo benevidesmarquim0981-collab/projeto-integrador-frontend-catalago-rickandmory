@@ -1,5 +1,4 @@
 # Rick and Morty — Catálogo de Personagens
-# Rick and Morty — Catálogo de Personagens
 
 Projeto de front-end desenvolvido como atividade acadêmica, utilizando HTML5, CSS3 e JavaScript. O catálogo é inspirado na série *Rick and Morty* e apresenta personagens da animação em cards com imagens e informações, além de conteúdo em vídeo.
 
