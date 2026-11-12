@@ -117,7 +117,7 @@ O projeto cumpre os requisitos técnicos das quatro aulas, com estrutura HTML5
 semântica, formulário validado e acessível, e seção de vídeo corretamente 
 implementada com múltiplos formatos de fallback.
 
-# CODE REVIEW PEDRO LUCAS DE ALMEIDA NASCIMENTO
+# CODE REVIEW PEDRO LUCAS DE ALMEIDA NASCIMENTO 12/11
 
 O projeto está muito bom e demonstra um excelente esforço na aplicação dos conhecimentos de JavaScript e CSS3. É possível perceber uma preocupação com a organização do código, a utilização de funções, arrays, eventos, manipulação do DOM e recursos de acessibilidade. Também merece destaque a implementação de funcionalidades como filtros, sistema de favoritos, avaliações, cálculo de médias e atualização dinâmica das informações.
 
