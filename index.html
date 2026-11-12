@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Personagens - Rick and Morty</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+
+  <!-- Navegação (Aula 8) -->
+  <nav class="navbar" aria-label="Menu principal">
+    <a href="#" class="logo">Catálogo de Personagens</a>
+    <ul class="menu" id="menu-principal"></ul>
+      <li><a href="#" class="ativo" aria-current="page">Início</a></li>
+      <li class="tem-dropdown">
+        <a href="#lista-personagens">Personagens</a>
+        <ul class="dropdown">
+          <li><a href="#lista-personagens">Humanos</a></li>
+          <li><a href="#lista-personagens">Alienígenas</a></li>
+        </ul>
+      </li>
+      <li><a href="#video-apresentacao">Vídeo</a></li>
+      <li><a href="#avaliacao">Avaliar</a></li>
+    </ul>
+     <button type="button" class="menu-hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"></button>
+      <span class="barra"></span><span class="barra"></span><span class="barra"></span>
+    </button>
+  </nav>
 
   <!-- Cabeçalho da página -->
   <header>
@@ -26,62 +47,87 @@
         <li>Origem principal: Terra C-137</li>
         <li>Status atualizado: vivo ou morto</li>
       </ul>
+      <div class="ferramentas">
+  <div class="campo">
+    <label for="campo-busca">Buscar por nome</label>
+    <input type="search" id="campo-busca" autocomplete="off">
+  </div>
+  <div class="campo">
+    <label for="filtro-especie">Espécie</label>
+    <select id="filtro-especie">
+      <option value="">Todas</option>
+      <option value="Humano">Humano</option>
+      <option value="Alienígena">Alienígena</option>
+    </select>
+  </div>
+  <div class="campo">
+    <label for="filtro-status">Status</label>
+    <select id="filtro-status">
+      <option value="">Todos</option>
+      <option value="Vivo">Vivo</option>
+      <option value="Morto">Morto</option>
+    </select>
+  </div>
+  <button type="button" id="btn-adicionar-personagem" class="botao">Adicionar personagem</button>
+</div>
+<p id="contador-exibidos" class="contador" aria-live="polite"></p>
 
-      <div class="personagem">
+      <!-- Cada personagem é um conteúdo independente: <article> (Aula 3) -->
+      <article class="personagem" data-id="rick" data-nome="Rick Sanchez" data-especie="Humano" data-status="Vivo" data-origem="Terra C-137"></article>
         <h3>Rick Sanchez</h3>
         <img src="assets/images/rick-sanchez.jpg" alt="Rick Sanchez, cientista idoso de jaleco azul, segurando um portal gun">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra C-137</p>
-      </div>
+      </article>
 
-      <div class="personagem">
+      <article class="personagem" data-id="morty" data-nome="Morty Smith" data-especie="Humano" data-status="Vivo" data-origem="Terra C-137"></article>
         <h3>Morty Smith</h3>
         <img src="assets/images/morty-smith.jpg" alt="Morty Smith, adolescente de cabelo castanho e camiseta amarela">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra C-137</p>
-      </div>
+      </article>
 
-      <div class="personagem">
+      <article class="personagem" data-id="summer" data-nome="Summer Smith" data-especie="Humano" data-status="Vivo" data-origem="Terra Replacement Dimension"></article>
         <h3>Summer Smith</h3>
         <img src="assets/images/summer-smith.jpg" alt="Summer Smith, adolescente de cabelo ruivo">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
-      </div>
+      </article>
 
-      <div class="personagem">
+      <article class="personagem" data-id="beth" data-nome="Beth Smith" data-especie="Humano" data-status="Vivo" data-origem="Terra Replacement Dimension"></article>
         <h3>Beth Smith</h3>
         <img src="assets/images/beth-smith.jpg" alt="Beth Smith, mãe da família, cabelo ruivo comprido">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
-      </div>
+      </article>
 
-      <div class="personagem">
+      <article class="personagem" data-id="jerry" data-nome="Jerry Smith" data-especie="Humano" data-status="Vivo" data-origem="Terra Replacement Dimension"></article>
         <h3>Jerry Smith</h3>
         <img src="assets/images/jerry-smith.jpg" alt="Jerry Smith, pai da família, camisa social azul">
         <p><strong>Espécie:</strong> Humano</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Terra Replacement Dimension</p>
-      </div>
+      </article>
 
-      <div class="personagem">
+      <article class="personagem" data-id="birdperson" data-nome="Birdperson" data-especie="Alienígena" data-status="Morto" data-origem="Desconhecida"></article>
         <h3>Birdperson</h3>
         <img src="assets/images/birdperson.jpg" alt="Birdperson, alienígena humanoide com corpo de ave e óculos escuros">
         <p><strong>Espécie:</strong> Alienígena</p>
         <p><strong>Status:</strong> Morto</p>
         <p><strong>Origem:</strong> Desconhecida</p>
-      </div>
+      </article>
 
-      <div class="personagem">
+      <article class="personagem" data-id="poopybutthole" data-nome="Mr. Poopybutthole" data-especie="Alienígena" data-status="Vivo" data-origem="Desconhecida"></article>
         <h3>Mr. Poopybutthole</h3>
         <img src="assets/images/mr-poopybutthole.jpg" alt="Mr. Poopybutthole, alienígena marrom em formato de mancha com braços e pernas curtos">
         <p><strong>Espécie:</strong> Alienígena</p>
         <p><strong>Status:</strong> Vivo</p>
         <p><strong>Origem:</strong> Desconhecida</p>
-      </div>
+      </article>
 
       <!-- Tabela resumo (Aula 2) -->
       <h3>Resumo por status</h3>
@@ -121,11 +167,18 @@
         (abaixo da dobra) e não é o foco principal do conteúdo: carregamos
         só duração/dimensões para exibir o poster rapidamente, sem baixar
         o arquivo inteiro antes do usuário decidir assistir.
+        Em termos de readyState, é uma dica para o navegador parar em
+        HAVE_METADATA (1): o evento loadedmetadata dispara, mas o
+        canplaythrough (HAVE_ENOUGH_DATA, 4) só ocorre após o play.
+        É apenas uma DICA: o navegador pode ignorá-la (ex.: economia de dados).
       -->
       <video controls poster="assets/images/poster-video.jpg" preload="metadata" width="560" height="315">
         <source src="assets/videos/tour-personagens.webm" type="video/webm">
         <source src="assets/videos/tour-personagens.mp4" type="video/mp4">
+        <!-- Legendas em WebVTT (Aula 4) -->
+        <track kind="subtitles" src="assets/videos/tour-personagens-pt.vtt" srclang="pt" label="Português" default>
         Seu navegador não suporta a reprodução de vídeo HTML5.
+        <a href="assets/videos/tour-personagens.mp4">Baixe o vídeo</a>.
       </video>
     </section>
 
@@ -133,10 +186,11 @@
     <section id="avaliacao">
       <h2>Avalie seu Personagem Favorito</h2>
 
-      <div class="alerta">
+      <!-- Conteúdo secundário relacionado: <aside> (Aula 3) -->
+      <aside class="alerta">
         <p>Sua avaliação ajuda a melhorar o catálogo!</p>
         <button type="button" id="btn-fechar-alerta" aria-label="Fechar alerta">X</button>
-      </div>
+      </aside>
 
       <form id="form-avaliacao">
 
@@ -145,12 +199,20 @@
 
           <div class="campo">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome" minlength="3" maxlength="50" placeholder="Seu nome completo" required>
           </div>
 
           <div class="campo">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="campo">
+            <label for="telefone">Telefone (opcional)</label>
+            <input type="tel" id="telefone" name="telefone"
+                   placeholder="(00) 00000-0000"
+                   pattern="\(\d{2}\) \d{5}-\d{4}"
+                   title="Formato: (00) 00000-0000">
           </div>
         </fieldset>
 
@@ -175,6 +237,11 @@
           </div>
 
           <div class="campo">
+            <label for="data-assistiu">Quando assistiu pela última vez?</label>
+            <input type="date" id="data-assistiu" name="data-assistiu">
+          </div>
+
+          <div class="campo">
             <p>Recomendaria a série?</p>
             <input type="radio" id="recomenda-sim" name="recomenda" value="sim">
             <label for="recomenda-sim">Sim</label>
@@ -185,7 +252,12 @@
 
           <div class="campo">
             <label for="comentario">Comentário</label>
-            <textarea id="comentario" name="comentario" rows="4"></textarea>
+            <textarea id="comentario" name="comentario" rows="4" maxlength="500" placeholder="Conte o que você mais gosta nesse personagem"></textarea>
+          </div>
+
+          <div class="campo">
+            <input type="checkbox" id="aceite" name="aceite" required>
+            <label for="aceite">Aceito que minha avaliação seja exibida no catálogo</label>
           </div>
         </fieldset>
 
