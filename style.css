@@ -208,3 +208,358 @@ footer {
   color: #555;
   font-size: 0.9rem;
 }
+
+
+/* ============================================================
+   ============================================================
+   AULA 06 — CSS3: Sintaxe, Seletores e Estilização Base
+   ============================================================
+   ============================================================ */
+
+/* ----- Variáveis CSS (custom properties), com as cores do projeto ----- */
+:root {
+  --cor-primaria: #1b1f3b;
+  --cor-primaria-hover: #2c3266;
+  --cor-acento: #ff8c00;          /* destaque */
+  --cor-acento-claro: #ffedd5;
+  --cor-texto: #222;
+  --cor-texto-suave: #555;
+  --cor-fundo: #f4f4f4;
+  --cor-card: #ffffff;
+  --raio: 8px;
+  --raio-card: 10px;
+  --sombra: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --transicao-padrao: transform 0.2s ease;
+}
+
+/* ----- Erro 3: usar rem (e não px) em tipografia ----- */
+/* 100% respeita a preferência de fonte do usuário (16px no padrão) */
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;     /* links âncora não ficam atrás da navbar sticky (Aula 8) */
+}
+
+/* ----- Box model: border-box já está no reset do topo -----
+   Com border-box, width: 300px INCLUI padding e border.
+   (content-box faria 300 + 20 + 20 + 2 + 2 = 344px)
+   Shorthand: padding: topo direita baixo esquerda (sentido horário)
+              padding: vertical horizontal
+              margin: 0 auto  -> centraliza um bloco com largura definida */
+
+/* ----- Seletor de classe: estilo reutilizável ----- */
+.destaque {
+  background-color: var(--cor-acento-claro);
+  font-weight: bold;
+}
+
+/* ----- Seletor de ID: elemento único da página ----- */
+/* (IDs têm especificidade alta; aqui servem para elementos únicos) */
+#lista-personagens {
+  border-top: 4px solid var(--cor-acento);
+}
+
+#video-apresentacao {
+  border-top: 4px solid var(--cor-primaria);
+}
+
+#avaliacao {
+  border-top: 4px solid var(--cor-primaria);
+}
+
+/* ----- Combinadores ----- */
+/* Agrupamento (,): a regra vale para h1, h2 e h3 ao mesmo tempo */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Filho direto (>) + irmão adjacente (+): só a lista logo após o h2 da seção */
+section > h2 + ul {
+  list-style-type: square;
+}
+
+/* Descendente (espaço): qualquer <p> dentro de .personagem */
+.personagem p {
+  color: var(--cor-texto-suave);
+}
+
+/* Filho direto (>): só o <p> filho imediato do card */
+.personagem > p {
+  margin-bottom: 0.25rem;
+}
+
+/* Irmão adjacente (+): imagem logo depois do h3 do card */
+.personagem h3 + img {
+  margin-top: 0.5rem;
+}
+
+/* Irmão geral (~): todos os <p> irmãos que vêm depois de um h3 dentro do card */
+.personagem h3 ~ p {
+  font-size: 0.95rem;
+}
+
+/* ----- Links: os 4 estados, NESTA ordem (LoVe/HAte) -----
+   Têm a MESMA especificidade, então vence a última declarada. */
+a:link { color: var(--cor-primaria); }
+a:visited { color: #6b3fa0; }
+a:hover { text-decoration: underline; }
+a:active { color: var(--cor-acento); }
+
+/* ----- Especificidade: cálculo do "peso" -----
+   inline = 1000 | ID = 100 | classe/atributo/pseudo-classe = 10 | elemento = 1
+   .card .titulo        -> 20
+   #sidebar .card .titulo -> 120
+   Empate: vence a regra declarada por ÚLTIMO (a "cascata").
+   Evite !important; para depurar use o DevTools (F12): regras
+   sobrescritas aparecem riscadas no painel Styles. */
+
+/* ----- Botão genérico (reaproveita as variáveis) ----- */
+.botao {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--cor-primaria);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--raio);
+  margin-top: 1rem;
+}
+
+.botao:hover {
+  background: var(--cor-primaria-hover);
+}
+
+/* ----- Erro 1: margin x padding -----
+   padding = espaço INTERNO (o fundo colorido preenche)
+   margin  = espaço EXTERNO (afasta dos vizinhos)
+   /* ============================================================
+   COMPLEMENTOS — conceitos que faltavam (Aulas 3, 4, 6, 7 e 8)
+   ============================================================ */
+
+/* ----- Aula 6: object-fit -----
+   Mantém a proporção da imagem sem distorcer; "cover" preenche a caixa
+   e corta o excesso. Todas as fotos dos cards ficam do mesmo tamanho. */
+.personagem img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ----- Aula 4: vídeo responsivo -----
+   Com height="315" no HTML, o vídeo achatava em telas estreitas.
+   height: auto + aspect-ratio mantém a proporção 16:9. */
+video {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+/* ----- Aula 3: estilos dos novos tipos de input ----- */
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 4px;
+}
+
+/* Radios e checkbox: o rótulo fica ao lado do campo.
+   (".campo label" forçava display: block e jogava o texto para a linha de baixo.)
+   Combinador de irmão adjacente (+); especificidade maior que ".campo label". */
+.campo input[type="radio"] + label,
+.campo input[type="checkbox"] + label {
+  display: inline;
+  font-weight: normal;
+}
+
+/* ----- Aula 7: Grid com grid-template-areas no formulário -----
+   Os dois fieldsets ficam lado a lado ("desenhando" o layout em áreas
+   nomeadas) e o botão ocupa a linha de baixo inteira. */
+#form-avaliacao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "dados avaliacao"
+    "enviar enviar";
+  column-gap: 16px;
+  align-items: start;
+}
+
+#form-avaliacao fieldset {
+  min-width: 0;                   /* evita estouro do fieldset dentro da coluna 1fr */
+}
+
+#form-avaliacao fieldset:first-of-type { grid-area: dados; }
+#form-avaliacao fieldset:last-of-type  { grid-area: avaliacao; }
+
+#form-avaliacao button[type="submit"] {
+  grid-area: enviar;
+  justify-self: start;
+}
+
+/* Em telas estreitas, as áreas se empilham em uma coluna só */
+@media (max-width: 640px) {
+  #form-avaliacao {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "dados"
+      "avaliacao"
+      "enviar";
+  }
+}
+
+/* ----- Aula 7: pseudo-classe estrutural :last-child -----
+   Linhas separadoras entre os itens do dropdown, exceto no último. */
+.dropdown li {
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+/* ----- Aula 7: exercício do Flexbox calculado à mão -----
+   Container de 1000px com itens "1 1 150px", "3 1 150px" e "1 1 150px":
+   soma das bases = 450px | espaço livre = 550px | total de grow = 5
+   A = 150 + 110 = 260px | B = 150 + 330 = 480px | C = 150 + 110 = 260px */
+
+/* ----- Aula 8: diagnóstico documentado de contexto de empilhamento -----
+   Problema: o dropdown podia ficar ATRÁS dos cards ao abrir sobre eles.
+   Causa: cada .personagem cria seu próprio contexto (position: relative +
+   z-index: 1) e o dropdown está preso no contexto da .navbar (sticky).
+   Comparar o z-index do dropdown com o dos cards não faz sentido: são
+   pilhas diferentes.
+   Solução: o z-index vai em quem CRIA o contexto (.navbar, z-index: 100,
+   maior que 1), e o .dropdown só compete com os irmãos dentro dele.
+   Sticky: nenhum ancestral da .navbar tem overflow diferente de visible,
+   e ela fica fora do <header> para não ficar presa à altura dele. */
+   /* ============================================================
+   JAVASCRIPT — classes que o main.js liga e desliga (Aulas 11 e 12)
+   ============================================================ */
+
+/* hidden: o JS esconde cards com este atributo */
+.personagem[hidden] {
+  display: none;
+}
+
+/* Pontuação e faixas de classificação */
+.pontuacao {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.faixa-excelente   { border-color: #107c41; }
+.faixa-muito-bom   { border-color: var(--cor-primaria); }
+.faixa-regular     { border-color: var(--cor-acento); }
+.faixa-fraco       { border-color: #c0392b; }
+
+.faixa-excelente .pontuacao { color: #107c41; }
+.faixa-muito-bom .pontuacao { color: var(--cor-primaria); }
+.faixa-regular .pontuacao   { color: #b45309; }
+.faixa-fraco .pontuacao     { color: #c0392b; }
+
+/* Botão de favorito (o estado de acessibilidade comanda a aparência) */
+.botao-favoritar {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.botao-favoritar:hover { color: var(--cor-texto-suave); }
+.botao-favoritar[aria-pressed="true"] { color: #c0392b; }
+
+.botao-favoritar:focus-visible {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* Busca, filtros e contador */
+.ferramentas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ferramentas .campo {
+  margin-bottom: 0;
+  flex: 1 1 180px;
+}
+
+input[type="search"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contador {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Painel "Resumo do catálogo" */
+.resumo-catalogo {
+  background: var(--cor-acento-claro);
+  border: 1px solid var(--cor-acento);
+  border-radius: var(--raio);
+  padding: 0.75rem 1rem;
+}
+
+.resumo-catalogo h3 { margin-top: 0; font-size: 1.05rem; }
+.resumo-catalogo ul { list-style: none; margin-left: 0; margin-bottom: 0; font-size: 0.9rem; }
+.resumo-catalogo li:first-child { font-weight: normal; }
+
+/* Mensagem do formulário e lista de avaliações */
+.mensagem-form {
+  margin: 0.75rem 0;
+  font-weight: bold;
+  color: #107c41;
+}
+
+.mensagem-form.erro { color: #c0392b; }
+
+.painel-avaliacoes ul { margin-left: 0; list-style: none; }
+.painel-avaliacoes li { padding: 0.4rem 0; border-bottom: 1px solid #eee; }
+.painel-avaliacoes li:last-child { border-bottom: none; }
+.painel-avaliacoes li:first-child { font-weight: normal; }
+
+/* Menu hambúrguer aberto: o JS adiciona a classe .aberto */
+@media (max-width: 640px) {
+  .menu.aberto {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1.5rem 1rem;
+    background: var(--cor-card);
+    box-shadow: var(--sombra);
+  }
+
+  .menu.aberto a { padding: 0.5rem 0; }
+
+  /* Em tela estreita não há :hover: as opções aparecem direto */
+  .menu.aberto .dropdown {
+    display: block;
+    position: static;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+  }
+}
