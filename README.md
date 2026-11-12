@@ -116,3 +116,13 @@ Projeto inspirado na série *Rick and Morty*, criado sem finalidade comercial.
 O projeto cumpre os requisitos técnicos das quatro aulas, com estrutura HTML5 
 semântica, formulário validado e acessível, e seção de vídeo corretamente 
 implementada com múltiplos formatos de fallback.
+
+# CODE REVIEW PEDRO LUCAS DE ALMEIDA NASCIMENTO
+
+O projeto está muito bom e demonstra um excelente esforço na aplicação dos conhecimentos de JavaScript e CSS3. É possível perceber uma preocupação com a organização do código, a utilização de funções, arrays, eventos, manipulação do DOM e recursos de acessibilidade. Também merece destaque a implementação de funcionalidades como filtros, sistema de favoritos, avaliações, cálculo de médias e atualização dinâmica das informações.
+
+A estilização também está bem trabalhada, com utilização de variáveis CSS, Flexbox, Grid, responsividade, efeitos visuais e organização dos componentes da página.
+
+Entretanto, alguns pontos precisam de atenção. No JavaScript, a função de adicionar personagens pode apresentar problemas caso a lista esteja vazia, pois tenta inserir o novo card após o último personagem existente. Também seria interessante melhorar o tratamento de algumas informações do formulário e garantir que os dados das avaliações e dos favoritos não sejam perdidos ao atualizar a página.
+
+No CSS, alguns elementos precisam de ajustes, como o posicionamento do botão de favoritos, que utiliza position: absolute, mas não há uma definição de posicionamento relativo no card. Além disso, existem comentários e trechos de estilos que poderiam ser melhor organizados para facilitar a manutenção do código.
